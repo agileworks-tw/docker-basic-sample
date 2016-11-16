@@ -1,0 +1,17 @@
+version: '2'
+services:
+  web:
+    image: hiromasaono/curl
+    networks:
+      - back-tier
+
+  nginx:
+    image: nginx
+    networks:
+      - back-tier
+
+networks:
+  back-tier:
+    driver: bridge
+  front-tier:
+    driver: bridge
